@@ -1,0 +1,256 @@
+{
+  "version": "21.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "RunnersStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "RunnersStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "RunnersStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "RunnersStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/01e44aadc458e670e0d484a951acf87912ed84c3bcaa60e349a965b737565fca.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "RunnersStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "RunnersStack.assets"
+      ],
+      "metadata": {
+        "/RunnersStack/Runner_VPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCF123C1CB"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet1SubnetB9BFD686"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet1RouteTableF2CEEFB1"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet1RouteTableAssociationCDFC6F6C"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet1DefaultRoute8E609B54"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet1EIP6C1CD9AF"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet1NATGateway0CC8817C"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet2Subnet15774089"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet2RouteTable34507B19"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet2RouteTableAssociation4210F0AA"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet2DefaultRoute7505DD6E"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet2EIPDFC5C0C5"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPublicSubnet2NATGatewayBD99518F"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPrivateSubnet1Subnet223BD461"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPrivateSubnet1RouteTableD87F7FBF"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPrivateSubnet1RouteTableAssociationB9E4B698"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPrivateSubnet1DefaultRouteE80FA767"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPrivateSubnet2Subnet900892F3"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPrivateSubnet2RouteTableE7DF18AA"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPrivateSubnet2RouteTableAssociation8C1ED501"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCPrivateSubnet2DefaultRoute6B3ABDC3"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCIGW298ABEC9"
+          }
+        ],
+        "/RunnersStack/Runner_VPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerVPCVPCGW7B58662A"
+          }
+        ],
+        "/RunnersStack/Gitlab_Runner_SG/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GitlabRunnerSG20B4E782"
+          }
+        ],
+        "/RunnersStack/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Role1ABCC5F0"
+          }
+        ],
+        "/RunnersStack/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoleDefaultPolicy5FFB7DAB"
+          }
+        ],
+        "/RunnersStack/gitlab_asg_template/Profile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gitlabasgtemplateProfile2C3227FD"
+          }
+        ],
+        "/RunnersStack/gitlab_asg_template/AmiMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gitlabasgtemplateAmiMap8C412C4D"
+          }
+        ],
+        "/RunnersStack/gitlab_asg_template/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gitlabasgtemplate86B8E6A0"
+          }
+        ],
+        "/RunnersStack/Runner_ASG/ASG": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RunnerASG691750CA"
+          }
+        ],
+        "/RunnersStack/gitlab_runner_token/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "gitlabrunnertokenAAE56D41"
+          }
+        ],
+        "/RunnersStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/RunnersStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/RunnersStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/RunnersStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "RunnersStack"
+    }
+  }
+}
